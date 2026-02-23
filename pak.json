@@ -15,5 +15,5 @@
     "v0.1.0": "Initial release. Ready for testing."
   },
   "launch": "launch.sh",
-  "version": "v0.1.0"
+  "version": "v0.1.1"
 }
