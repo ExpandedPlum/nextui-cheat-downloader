@@ -20,7 +20,7 @@ GITHUB_API="https://api.github.com/repos/libretro/libretro-database/contents/cht
 CACHE_TTL_HOURS=24
 
 # ROM extensions to include (pipe-separated for grep -E)
-ROM_EXTENSIONS="gba|gbc|gb|nes|sfc|smc|n64|z64|v64|nds|fds|md|gen|smd|gg|sms|32x|cue|iso|pbp|chd|pce|psp|lnx|a78|a26|zip|7z"
+ROM_EXTENSIONS="gba|gbc|gb|nes|sfc|smc|n64|z64|v64|nds|fds|md|gen|smd|gg|sms|32x|cue|iso|pbp|chd|pce|psp|lnx|a78|a26|zip|7z|m3u"
 
 mkdir -p "$CACHE_DIR"
 
