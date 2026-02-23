@@ -1,4 +1,4 @@
-# Cheat Downloader
+# Another Cheat Downloader
 
 A NextUI/MinUI pak for downloading cheat files directly to your device from the [Libretro cheat database](https://github.com/libretro/libretro-database/tree/master/cht). No computer required — browse your ROM library, pick a cheat, and it downloads and saves automatically.
 
@@ -15,17 +15,17 @@ A NextUI/MinUI pak for downloading cheat files directly to your device from the 
 ## Installation
 
 1. Mount your MinUI SD card.
-2. Download the latest `Cheat Downloader.pak.zip` from [GitHub Releases](https://github.com/mikecosentino/nextui-cheat-downloader/releases).
-3. Create the folder `/Tools/tg5040/Cheat Downloader.pak/` on your SD card.
+2. Download the latest `Another Cheat Downloader.pak.zip` from [GitHub Releases](https://github.com/mikecosentino/nextui-cheat-downloader/releases).
+3. Create the folder `/Tools/tg5040/Another Cheat Downloader.pak/` on your SD card.
 4. Extract the contents of the zip into that folder.
-5. Confirm `/Tools/tg5040/Cheat Downloader.pak/launch.sh` exists.
+5. Confirm `/Tools/tg5040/Another Cheat Downloader.pak/launch.sh` exists.
 6. Unmount the SD card and insert it into your device.
 
 ---
 
 ## Usage
 
-Navigate to **Tools → Cheat Downloader** and press **A**.
+Navigate to **Tools → Another Cheat Downloader** and press **A**.
 
 ### Step 1 — Select a System
 
@@ -143,7 +143,7 @@ The cheat file is named after the ROM (without its original extension) so that t
 Cheat lists fetched from GitHub are cached locally for **24 hours** to avoid hitting API rate limits and speed up repeat use. To force a refresh before the 24-hour window:
 
 1. SSH into the device (or use a file manager)
-2. Delete the cache files at `/mnt/SDCARD/.userdata/tg5040/Cheat Downloader/cheats_*.json`
+2. Delete the cache files at `/mnt/SDCARD/.userdata/tg5040/Another Cheat Downloader/cheats_*.json`
 3. Relaunch the pak
 
 ---

@@ -1,5 +1,5 @@
 #!/bin/sh
-# Cheats Downloader. A MinUI pak for downloading cheat files from the Libretro database
+# Another Cheat Downloader. A MinUI pak for downloading cheat files from the Libretro database
 # Mike Cosentino
 
 # Setup
