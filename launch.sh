@@ -198,7 +198,22 @@ cache_system_cheats() {
      else $n end) as $display |
     { name: $display, url: .download_url }
   ] | { items: . }' "$CACHE_DIR/cheats_raw.json" > "$cache_file"
-        ($rn | contains($cn))
+
+  hide_status
+}
+
+# Filter cached cheats to entries that fuzzy-match the given ROM filename
+find_matching_cheats() {
+  local rom_basename="$1" system_short="$2"
+  local rn
+  rn=$(normalize_name "$rom_basename")
+
+  jq --arg rn "$rn" '
+    .items | map(
+      select(
+        (.name | gsub("^\\[.*?\\] "; "") | gsub(" *\\(.*$"; "") | ascii_downcase | gsub("[^a-z0-9]"; "")) as $cn |
+        ($rn | contains($cn)) or
+        ($cn | contains($rn))
       )
     ) | { items: . }
   ' "$CACHE_DIR/cheats_${system_short}.json" > "$CACHE_DIR/matched_cheats.json"
