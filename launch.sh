@@ -176,7 +176,7 @@ cache_system_cheats() {
     return 1
   fi
 
-  jq '[.[] | select(.type == "file" and (.name | endswith(".cht"))) |
+  if ! jq '[.[] | select(.type == "file" and (.name | endswith(".cht"))) |
     (.name | gsub("\\.cht$"; "")) as $n |
     [($n | scan("\\(([^)]+)\\)")) | .[0]] as $parens |
     ($n | gsub(" *\\(.*$"; "")) as $game |
@@ -197,8 +197,14 @@ cache_system_cheats() {
      elif ($region != "") then "[" + $region + "] " + $game
      else $n end) as $display |
     { name: $display, url: .download_url }
-  ] | { items: . }' "$CACHE_DIR/cheats_raw.json" > "$cache_file"
+  ] | { items: . }' "$CACHE_DIR/cheats_raw.json" > "$cache_file"; then
+    hide_status
+    rm -f "$CACHE_DIR/cheats_raw.json" "$cache_file"
+    minui-presenter --message "Error processing cheat list. Try again." --timeout 4
+    return 1
+  fi
 
+  rm -f "$CACHE_DIR/cheats_raw.json"
   hide_status
 }
 
