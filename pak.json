@@ -4,7 +4,7 @@
   "description": "A MinUI pak for downloading cheat files from the Libretro database.",
   "author": "ExpandedPlum",
   "repo_url": "https://github.com/ExpandedPlum/another-nextui-cheat-downloader",
-  "release_filename": "Another.Cheat.Downloader.pak.zip",
+  "release_filename": "Another Cheat Downloader.pak.zip",
   "platforms": [
     "tg5040"
   ],

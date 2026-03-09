@@ -60,9 +60,10 @@ normalize_name() {
 cache_expired() {
   local file="$1"
   [ ! -f "$file" ] && return 0
-  # CACHE_TTL_HOURS / 24, minimum 1 day
-  local ttl_days=$(( CACHE_TTL_HOURS / 24 ))
-  [ "$ttl_days" -lt 1 ] && ttl_days=1
+  # find -mtime +N matches files where floor(age_in_days) > N
+  # so -mtime +0 = older than 24h, -mtime +1 = older than 48h, etc.
+  local ttl_days=$(( CACHE_TTL_HOURS / 24 - 1 ))
+  [ "$ttl_days" -lt 0 ] && ttl_days=0
   [ -n "$(find "$file" -mtime +"$ttl_days" 2>/dev/null)" ]
 }
 
