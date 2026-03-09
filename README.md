@@ -15,7 +15,7 @@ A NextUI/MinUI pak for downloading cheat files directly to your device from the 
 ## Installation
 
 1. Mount your MinUI SD card.
-2. Download the latest `Another Cheat Downloader.pak.zip` from [GitHub Releases](https://github.com/mikecosentino/nextui-cheat-downloader/releases).
+2. Download the latest `Another Cheat Downloader.pak.zip` from [GitHub Releases](https://github.com/ExpandedPlum/another-nextui-cheat-downloader/releases).
 3. Create the folder `/Tools/tg5040/Another Cheat Downloader.pak/` on your SD card.
 4. Extract the contents of the zip into that folder.
 5. Confirm `/Tools/tg5040/Another Cheat Downloader.pak/launch.sh` exists.

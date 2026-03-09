@@ -190,7 +190,9 @@ cache_system_cheats() {
      else $tool_raw end) as $tool |
     ($region_raw |
      gsub("USA"; "US") | gsub("Europe"; "EU") | gsub("Japan"; "JP") |
-     gsub("World"; "WD") | gsub("Australia"; "AU") | gsub("Unknown"; "??") |
+     gsub("World"; "WD") | gsub("Australia"; "AU") | gsub("Korea"; "KR") |
+     gsub("France"; "FR") | gsub("Germany"; "DE") | gsub("Spain"; "ES") |
+     gsub("Brazil"; "BR") | gsub("Unknown"; "??") |
      gsub(", "; ",")) as $region |
     (if ($tool != "" and $region != "") then "[" + $tool + "|" + $region + "] " + $game
      elif ($tool != "") then "[" + $tool + "] " + $game
